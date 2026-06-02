@@ -1,0 +1,1286 @@
+WEBVTT
+
+1
+00:00:18.610 --> 00:00:20.080
+Audio shared by Ben Hosler: Alright!
+
+2
+00:00:20.210 --> 00:00:25.930
+Alicia Turner (UF): Hello, everyone! Welcome, welcome! It's All Hands, February 18th.
+
+3
+00:00:26.030 --> 00:00:43.229
+Alicia Turner (UF): I see lots of folks starting to join. We're gonna dive right in, though, because we have, a really full agenda and some great updates to bring you in terms of our closing in on prep for the test phase that will be starting soon. I'm going to do just a quick
+
+4
+00:00:43.300 --> 00:00:59.290
+Alicia Turner (UF): Reorientation to some of that high-level information about test phase, and then as quickly as I can, I will turn it over to our guest speaker today. Brady Allred from the training team is here. We are very lucky to have him join.
+
+5
+00:00:59.290 --> 00:01:05.660
+Alicia Turner (UF): The meat and the star of our show today will be Brady walking us through GitLab training
+
+6
+00:01:05.660 --> 00:01:23.929
+Alicia Turner (UF): for test scenario writing, because this will be the next stop on our, very exciting Empowering UF journey, and so he's going to get all of us ready to go with how we get test scenario writing done in our GitLab tool. And then I'll just wrap us up with a few PMO announcements as we transition
+
+7
+00:01:23.930 --> 00:01:27.070
+Alicia Turner (UF): out of ANC and Sprint 3 Wrap Up.
+
+8
+00:01:27.340 --> 00:01:29.720
+Alicia Turner (UF): So I think let's hit the next slide.
+
+9
+00:01:31.240 --> 00:01:48.119
+Alicia Turner (UF): As we do a lot of the time, I'm just gonna start with a zoomed-out view of our overarching timeline. We are… oh, we dropped our We Are Here arrow, that's my fault, but we are sitting right, of course, at the end, close to the end of February 2026.
+
+10
+00:01:48.120 --> 00:02:03.230
+Alicia Turner (UF): Which is our third critical milestone, that third line with the two circles at the end of it. We have lunch scheduled on March 2nd. For all of you who can make it, we're going to go celebrate together for achieving this incredible milestone. It has been…
+
+11
+00:02:03.310 --> 00:02:16.159
+Alicia Turner (UF): A lot of work, and so much to celebrate. So that's really where we are in terms of our big progress towards Go Live in July 2027. We're wrapping up Architecting a Figure and heading into Test.
+
+12
+00:02:16.650 --> 00:02:18.710
+Alicia Turner (UF): So, on the next slide…
+
+13
+00:02:18.860 --> 00:02:28.229
+Alicia Turner (UF): We've brought a couple, orientations to you so far in terms of preparing for tests. This is our third orientation from our three-part series.
+
+14
+00:02:28.270 --> 00:02:47.350
+Alicia Turner (UF): All the way back in January. It feels like a year ago, but it's only been a month and a half. Jan 14th, we started with just very high-level introduction, some terminology for our test phase. The following week, we did our second, orientation around test… the test scenario introduction.
+
+15
+00:02:47.350 --> 00:02:55.939
+Alicia Turner (UF): and some planning around blueprinting those scenarios. And today, February 18th, we're going to bring you the test scenario writing in GitLab.
+
+16
+00:02:56.510 --> 00:02:58.620
+Alicia Turner (UF): On our next slide…
+
+17
+00:03:00.790 --> 00:03:16.040
+Alicia Turner (UF): Just a reminder about where we've been, where we are, where we're going. Wrapping up Architect2Configure is a monumental amount of work from all of you on configuration, testing, developing integrations, developing reports.
+
+18
+00:03:16.040 --> 00:03:31.480
+Alicia Turner (UF): The incredible push for conversions, especially from that grants team who knocked it out of the park last week, and of course, all of the organizational change management training activities that have gone into preparing us for the next phase of the project.
+
+19
+00:03:31.500 --> 00:03:49.640
+Alicia Turner (UF): We will have 5 different test types, as a reminder here, 1, 2, 3, 4, 5, end-to-end payroll compare, user experience review, regression and performance testing, and of course, the lion's share of that, and coming up next, will be the end-to-end testing.
+
+20
+00:03:49.780 --> 00:04:09.129
+Alicia Turner (UF): On our next slide, we'll zoom in on the timeline as a reminder for how those different test types will be sequenced across the test phase. And test scenario writing, as you know, and we'll hear a lot about today, is the most critical input, obviously, to that end-to-end test cycle.
+
+21
+00:04:09.330 --> 00:04:20.300
+Alicia Turner (UF): For end-to-end testing, that'll be broken up into two chunks. We're calling it 1A and 1B, and so end-to-end testing will run, around April through early October.
+
+22
+00:04:20.730 --> 00:04:38.650
+Alicia Turner (UF): And then those bright green bars there towards the bottom right, PCT, the payroll compare, also critical to our successful go-live. We'll do 3 cycles of payroll compare testing, and the UER, will be, sequenced around payroll cycle 2.
+
+23
+00:04:38.950 --> 00:04:57.240
+Alicia Turner (UF): The other sort of teal-ish arrows are regression testing and performance testing, which will also be done in sequence with the other test types. So this is just a zoom-in view at our timeline specific to the test phase, and how those activities will be staged together.
+
+24
+00:04:58.020 --> 00:05:01.560
+Alicia Turner (UF): And I think I have one more slide before I hand it over.
+
+25
+00:05:02.900 --> 00:05:07.820
+Alicia Turner (UF): Yes, this is a reminder from, I believe, our second orientation session.
+
+26
+00:05:07.890 --> 00:05:23.809
+Alicia Turner (UF): with just, a conceptual look at the different components that will go into writing a test scenario. There will be an overarching parent scenario, which will have multiple steps or tasks, child, as in the GitLab Lingo child.
+
+27
+00:05:23.830 --> 00:05:34.189
+Alicia Turner (UF): tasks that go with that parent scenario, and you'll be working very closely with your Workstream leads and your team leads on how to do this once we get through
+
+28
+00:05:34.190 --> 00:05:51.629
+Alicia Turner (UF): the last week and a half of Architect and Configure, so there'll be lots of time for you to have, support and get your feet under you with this exercise, but we want to make sure and equip you with the toolset to do it, and so this is my cue to hand it over to Brady.
+
+29
+00:05:51.710 --> 00:05:55.240
+Alicia Turner (UF): So, Brady, take it from here. The floor is yours.
+
+30
+00:05:55.850 --> 00:05:57.000
+Brady Allred: Thank you.
+
+31
+00:05:57.390 --> 00:06:00.439
+Brady Allred: I don't know about, I don't know about the…
+
+32
+00:06:00.700 --> 00:06:07.560
+Brady Allred: VIP, but I'll do the… do the best I can here. Give me just one second to set this up.
+
+33
+00:06:08.610 --> 00:06:10.909
+Brady Allred: Share my screen with you all.
+
+34
+00:06:13.450 --> 00:06:14.290
+Brady Allred: Maybe.
+
+35
+00:06:21.090 --> 00:06:25.899
+Brady Allred: Okay, everybody see the PowerPoint? Some nods? Perfect. Okay.
+
+36
+00:06:26.160 --> 00:06:43.000
+Brady Allred: So, yes, my name is Brady. I think I've… most of you have probably interacted with me at some point, but I have had the pleasure to work with the PMO team on creating this intro training to this end-to-end workflow process.
+
+37
+00:06:43.370 --> 00:06:56.169
+Brady Allred: Today, we are kicking off the training to the end-to-end testing project. Our goal today is to walk you through the basic workflow, in GitLab and ensure we capture our testing data accurately.
+
+38
+00:06:56.280 --> 00:07:02.459
+Brady Allred: We'll be making these slides available to you, as well as the recordings and the checklist resource to help you keep track.
+
+39
+00:07:02.740 --> 00:07:20.749
+Brady Allred: This training is about the tool, GitLab. It's not about how to write your scenarios or the decision process in identifying any bugs or defects. But you can think about the test scenario examples you've seen that the project team shared in all hands, and how they'll work in this tool.
+
+40
+00:07:20.870 --> 00:07:24.910
+Brady Allred: There is a lot to cover. I'll do my best to go quickly and make sense.
+
+41
+00:07:26.140 --> 00:07:40.579
+Brady Allred: But, to get some kickoff here, we wanted to start with some context. The shift is from unit testing to end-to-end testing. Functionally, this means we are transitioning from a user story structure to a test scenario structure.
+
+42
+00:07:40.650 --> 00:07:53.529
+Brady Allred: Operationally, your data inputs now have immediate downstream consequences, so a prompt completion in your area is required, or might be a dependency for finance, HR, or tech.
+
+43
+00:07:53.530 --> 00:08:01.280
+Brady Allred: To begin their work. So, accuracy is really critical to preventing, to prevent blocking other departments from being able to move forward.
+
+44
+00:08:02.990 --> 00:08:19.670
+Brady Allred: So, the golden rule with this, the thing to remember, is this testing process has very few system-enforced or required fields. This means that data quality is manual and relies entirely on your adherence to the process.
+
+45
+00:08:19.860 --> 00:08:32.390
+Brady Allred: So you… we want you to strictly follow the checklist and the steps that we provide. There's going to be some unique circumstances tailored to each individual, but as much as possible, we want you to make sure to get everything accurate.
+
+46
+00:08:33.200 --> 00:08:46.209
+Brady Allred: If, if you do make a mistake, there are some controls in place in the system to catch those mistakes that I'll show a little bit later. But for now, I did want to showcase this checklist. Let's see if I can get it opened up.
+
+47
+00:08:49.250 --> 00:08:50.940
+Brady Allred: Okay, is this visible?
+
+48
+00:08:51.660 --> 00:08:55.179
+Brady Allred: Yes, perfect. Okay, so this is a really long document.
+
+49
+00:08:55.220 --> 00:09:09.120
+Brady Allred: But you won't need every section every time. You won't have to go through, like, 1 to 58. It's broken up into several parts. It walks you through how to create a scenario, how to create child tasks.
+
+50
+00:09:09.150 --> 00:09:16.920
+Brady Allred: How to link scenarios and child tasks, so for dependencies, how to find and execute tasks.
+
+51
+00:09:17.060 --> 00:09:31.439
+Brady Allred: And then how to log a defect. That's most likely not gonna be everything that's… that you're going to have to do in GitLab, but it is the… the run-of-the-mill start. Most of the things, if you can do all this, you'll be able to do the rest.
+
+52
+00:09:31.970 --> 00:09:44.410
+Brady Allred: So, I did want to show… it highlights all of these steps that you're going to do. It's… I tried to make it as detailed as possible, but then at the end of each walkthrough, that you probably won't need every time.
+
+53
+00:09:44.550 --> 00:09:48.409
+Brady Allred: You'll get down to this validation checklist portion.
+
+54
+00:09:48.430 --> 00:10:02.739
+Brady Allred: And the point of this is to see that you've done all of your steps correctly. If you've gone through the process, you should be able to go back and, for example, this is creating a scenario. You should be able to then see that the scenario was created using the functional template.
+
+55
+00:10:02.740 --> 00:10:10.009
+Brady Allred: Scenario had at least one assignee, the relative size labels are applied, and the correct milestone is applied. So, it's just a check for you.
+
+56
+00:10:11.530 --> 00:10:12.710
+Brady Allred: Alright.
+
+57
+00:10:15.100 --> 00:10:32.759
+Brady Allred: So, moving forward, wanted to share some key terminology. You're probably… some of you might be familiar with some of these terms, but just to make sure we're all on the same page, you're gonna see terms like issue, which is the same as test scenario, and like Alicia said, that's the container for the whole test process.
+
+58
+00:10:32.940 --> 00:10:39.290
+Brady Allred: Within those scenarios, you're gonna have child tasks, which are the actual things and steps you're gonna do.
+
+59
+00:10:39.570 --> 00:10:44.029
+Brady Allred: And it's the… all of those need to be completed for this scenario to be completed.
+
+60
+00:10:44.280 --> 00:10:52.419
+Brady Allred: You're gonna have defects, which are bugs and failures in the process, and those will be logged and attached to individual tasks and scenarios.
+
+61
+00:10:52.560 --> 00:11:04.620
+Brady Allred: You're gonna see the term board, which is the visual dashboard, the term milestone, which is the, indicating the time frame that the scenario is being, tested and tracked.
+
+62
+00:11:04.840 --> 00:11:09.870
+Brady Allred: For example, E2E1 will be the first milestone.
+
+63
+00:11:10.300 --> 00:11:24.930
+Brady Allred: You're gonna see linked items, and those are dependencies. We'll talk a little bit more about those in a minute, but essentially, if one task needs to be completed before another, you can set that up in the scenarios or tasks so that that is required for moving forward.
+
+64
+00:11:26.490 --> 00:11:27.690
+Brady Allred: All right.
+
+65
+00:11:27.910 --> 00:11:46.469
+Brady Allred: So, as a reminder, test scenarios are the parent to multiple tasks. First scenario to pass, all the child tasks need to be completed successfully. So you can see here that we have this scenario, purchase a microscope for faculty members' new lab. All of these are the steps that need to be completed in Workday for this scenario to pass. So, if
+
+66
+00:11:46.480 --> 00:11:54.069
+Brady Allred: create an issue and PO doesn't pass, then the whole scenario fails, and this will need to be addressed before retest.
+
+67
+00:11:56.690 --> 00:12:12.600
+Brady Allred: We did create, this dashboard and diagram that illustrates the data hierarchy in GitLab. So you'll see the scenario sits at the top here, child tasks are underneath, and then the defects are linked directly to the tasks and the scenario.
+
+68
+00:12:12.830 --> 00:12:31.029
+Brady Allred: You have to maintain this structure, so if items are created in isolation without these links, they'll not appear on the PMO dashboards, so they won't be processed through. So, in essence, that means you can't create a task that's not a part of a scenario, otherwise it's not going to show up, nobody's going to know what to do with it.
+
+69
+00:12:32.010 --> 00:12:46.040
+Brady Allred: We will show you how to access reports like this, so you can see in real time the hierarchy and relation between specific scenarios and tasks, and we'll show you that later. But right now this is a visual, and we'll talk about how to get there and get access to that.
+
+70
+00:12:48.160 --> 00:13:06.919
+Brady Allred: All right, and then to touch on the controls, what if I mess up, because it is so important that we get this right, here are some of the things that are in place to kind of help you along in that process. Current safeguards we have are premature closing, so you can't close a scenario if a child task is still open in that scenario.
+
+71
+00:13:06.920 --> 00:13:15.599
+Brady Allred: it won't let you, close it out, so everything… all the child tasks need to be passed in order for the scenario to close. This will prevent that from happening.
+
+72
+00:13:15.660 --> 00:13:26.630
+Brady Allred: There's also smart templates in place to use when creating the tasks and scenarios and defects. You'll be able to fill out all the data you need there, and it just is really a nice plug-and-play.
+
+73
+00:13:26.950 --> 00:13:36.980
+Brady Allred: And as the safety net, there is PMO oversight, so daily reports will come through to catch missing information. If you miss something, PMO will let you know.
+
+74
+00:13:37.980 --> 00:13:50.559
+Brady Allred: And then, coming soon, there are a few more things that they're hoping to implement, so some automatic status updates for scenarios, for example, and then automated label checkers to ensure the data is complete.
+
+75
+00:13:52.610 --> 00:14:07.140
+Brady Allred: All right, and then, as a reminder, you will need to manually enter the scenario into GitLab. You can do this by either creating a scenario directly in GitLab from the start, or draft them on a platform of your choice, and then enter it into GitLab, but they do have to end up in GitLab.
+
+76
+00:14:09.320 --> 00:14:12.569
+Brady Allred: And now we'll get into the prep for the demo, so…
+
+77
+00:14:12.680 --> 00:14:23.789
+Brady Allred: Overall basic navigation, the testing process is going to be unique depending on what scenario or task you're working on. However, this is the path you're going to follow to get started, no matter what.
+
+78
+00:14:23.990 --> 00:14:35.289
+Brady Allred: You're going to need to access the end-to-end testing project, and you can do that using this link in this PowerPoint that you'll have access to, or in GitLab, you'll be able to search for the project in the search bar.
+
+79
+00:14:35.580 --> 00:14:41.669
+Brady Allred: From there, you're going to go to Plan, and then Issue Board on the left. This will make sense when you see it in the demo soon.
+
+80
+00:14:41.750 --> 00:14:57.460
+Brady Allred: And then you're going to select the board that you're going to be working with. Most of the time, you're going to be working in the scenario board rather than the defects Board. You'll see more about what that means, but the scenario board is the home of all of the progress, so this will be your stop A.
+
+81
+00:14:58.720 --> 00:14:59.980
+Brady Allred: Alright.
+
+82
+00:15:00.540 --> 00:15:13.800
+Brady Allred: And this is a work, example workflow of how things should go. But once you reach the scenario board, you're going to need to make a decision on if you want to create a new scenario, or start working on a scenario that's already been created.
+
+83
+00:15:13.910 --> 00:15:27.560
+Brady Allred: If a required scenario does not exist, you're going to need to build it along with the tasks using the standard templates that are in place, and then begin the execution. If it's already there, you're going to have to find the scenario.
+
+84
+00:15:27.600 --> 00:15:36.930
+Brady Allred: And then move from the not started column to all of the different tasks, and we'll show you that process, and that's kind of what this overflow is for.
+
+85
+00:15:37.440 --> 00:15:46.449
+Brady Allred: For the recordings and demos I'm going to show, we're going to start by creating a scenario and creating a task to be, as complete as possible.
+
+86
+00:15:47.930 --> 00:15:57.780
+Brady Allred: So, the first demo will be showing you how to create a scenario. These steps here walk through the process. I'm not going to go into too much detail, because you're going to see them all here in just a second.
+
+87
+00:15:58.060 --> 00:16:07.700
+Brady Allred: But the first recording you're gonna see as part of this process is creating the overall scenario, then you're gonna see a second recording that's really short on how to create a linked dependency.
+
+88
+00:16:08.290 --> 00:16:10.550
+Brady Allred: I'll go ahead and get started with that.
+
+89
+00:16:12.910 --> 00:16:17.140
+Brady Allred: Okay, so this is the scenario dashboard.
+
+90
+00:16:18.210 --> 00:16:23.530
+Brady Allred: This is where you're going to end up. You're going to make sure that you're in the scenarios board by looking here.
+
+91
+00:16:24.240 --> 00:16:27.670
+Brady Allred: You're then going to click Create New Issue.
+
+92
+00:16:28.200 --> 00:16:29.859
+Brady Allred: In the open column.
+
+93
+00:16:30.500 --> 00:16:36.910
+Brady Allred: You're gonna give your scenario a title that's descriptive of whatever it is that you happen to be working on.
+
+94
+00:16:37.210 --> 00:16:39.199
+Brady Allred: And click Create Issue.
+
+95
+00:16:40.990 --> 00:16:48.760
+Brady Allred: This pop-up will appear, showing the overall scenario. This is kind of all the interaction you're going to have with the scenario itself.
+
+96
+00:16:48.880 --> 00:16:50.799
+Brady Allred: I'm gonna click Edit up there.
+
+97
+00:16:51.040 --> 00:16:52.739
+Brady Allred: And choose your template.
+
+98
+00:16:52.890 --> 00:16:59.480
+Brady Allred: This is dependent on the functional area that's related to this scenario. For this example, I chose financial accounting.
+
+99
+00:16:59.800 --> 00:17:02.169
+Brady Allred: And then click Apply Template.
+
+100
+00:17:02.920 --> 00:17:13.420
+Brady Allred: And you're gonna see the description populates with a lot of information to fill out. Now, I don't know any of this information, so this recording doesn't have any of that, but you're gonna fill all that out.
+
+101
+00:17:13.560 --> 00:17:15.230
+Brady Allred: And click Save Changes.
+
+102
+00:17:16.700 --> 00:17:18.240
+Brady Allred: So that it applies.
+
+103
+00:17:19.329 --> 00:17:35.529
+Brady Allred: And then from here, you move to edit the labels. So the labels are really important. That's how we kind of keep track of what scenario is related to who, what the status is, and the size, and all sorts of things like that. So, from here, you're going to start.
+
+104
+00:17:36.030 --> 00:17:46.629
+Brady Allred: And first, you're going to search for the relative size label. Relative size is determined by the urgency of the scenario. It's really urgent, it's large, it's not urgent, small.
+
+105
+00:17:49.940 --> 00:17:53.570
+Brady Allred: You're also going to… oh, then you click Apply.
+
+106
+00:17:53.680 --> 00:18:02.320
+Brady Allred: So, you can see that now this went from relative size none to relative size large, and that just helps with the sorting, knowing what the scenario is all about.
+
+107
+00:18:04.550 --> 00:18:14.479
+Brady Allred: You're also going to edit the milestone. Again, E2EA1A is the first milestone, but you can see that there's other milestones here, depending on the time frame.
+
+108
+00:18:16.260 --> 00:18:18.330
+Brady Allred: And then once that is applied.
+
+109
+00:18:18.450 --> 00:18:29.699
+Brady Allred: you are good to go. So this is the shell of the scenario. It is not complete, but this is how you create the scenario shell. From here, you're going to work on linked dependencies and create child tasks.
+
+110
+00:18:29.950 --> 00:18:32.100
+Brady Allred: So, first we'll move there.
+
+111
+00:18:34.020 --> 00:18:40.480
+Brady Allred: And this process is really short, but you're simply going to scroll down to linked items, Click Add.
+
+112
+00:18:40.950 --> 00:18:49.510
+Brady Allred: And you can choose if you want to create a linked item that is… that this scenario blocks, or is blocked by.
+
+113
+00:18:49.650 --> 00:19:01.890
+Brady Allred: It's kind of a chicken or the egg. You can do it from either end, but if it blocks scenario, then this scenario must be completed before the next one that it blocks can be completed, and then vice versa.
+
+114
+00:19:02.210 --> 00:19:08.169
+Brady Allred: Scenario, linked items and child-linked items are created the same way.
+
+115
+00:19:08.390 --> 00:19:18.210
+Brady Allred: So, if you need to create a specific child task that is a linked dependency, you follow the same process, just within that child task, rather than the parent scenario.
+
+116
+00:19:19.630 --> 00:19:22.670
+Brady Allred: So, for this one, I chose that this scenario blocks
+
+117
+00:19:22.780 --> 00:19:30.730
+Brady Allred: a particular scenario, doesn't matter which one, but I typed in the name of the scenario here that is going to be blocking.
+
+118
+00:19:30.920 --> 00:19:41.319
+Brady Allred: It comes up, and you can choose either through the name of the scenario or the ID number. Every scenario, task, defect, everything in GitLab has an ID number. Those are helpful to note.
+
+119
+00:19:42.770 --> 00:19:47.800
+Brady Allred: Then you just click it, and you can have up to 10 scenarios that are dependent at a time.
+
+120
+00:19:48.360 --> 00:19:49.880
+Brady Allred: And then click Add.
+
+121
+00:19:51.440 --> 00:19:53.910
+Brady Allred: And now it's linked, so you can see that this
+
+122
+00:19:54.170 --> 00:19:59.760
+Brady Allred: scenario blocks this scenario, and this must be completed for this one, Cam.
+
+123
+00:20:01.180 --> 00:20:02.400
+Brady Allred: All right.
+
+124
+00:20:02.890 --> 00:20:07.589
+Brady Allred: Now we're going to move into scenario statuses to go over those a little bit.
+
+125
+00:20:07.920 --> 00:20:12.510
+Brady Allred: So, GitLab, as you might have noticed, has its own status.
+
+126
+00:20:13.480 --> 00:20:20.139
+Brady Allred: option, and scenarios and defects are unique in that they only use this option once. So.
+
+127
+00:20:20.810 --> 00:20:25.089
+Brady Allred: We're going to keep track of a scenario status,
+
+128
+00:20:25.610 --> 00:20:28.219
+Brady Allred: Using the labels rather than this.
+
+129
+00:20:28.570 --> 00:20:31.000
+Brady Allred: So this will only change
+
+130
+00:20:31.330 --> 00:20:41.209
+Brady Allred: when the scenario is ready to close. After all the child tasks have been completed, then we can change this status from the default, whether it be not started or open.
+
+131
+00:20:41.540 --> 00:20:50.779
+Brady Allred: to close. That's the only time. Every other time when a scenario needs to change statuses, it's going to utilize the labels feature, and you're going to see that they look like this.
+
+132
+00:20:51.270 --> 00:20:59.590
+Brady Allred: There's several labels that you're going to use. The first person to start working on a scenario, which would be the assignee of the first task.
+
+133
+00:20:59.930 --> 00:21:06.840
+Brady Allred: Adds the in-progress label to that scenario, so that it moves to the in-progress column of the scenario board.
+
+134
+00:21:07.280 --> 00:21:16.929
+Brady Allred: If someone discovers that their task can't be executed and they should apply, then they should apply the blocked or on hold scenario label.
+
+135
+00:21:17.220 --> 00:21:19.620
+Brady Allred: Which moves it to the blocked or on hold column.
+
+136
+00:21:19.730 --> 00:21:27.289
+Brady Allred: And then, if the scenario, for some reason is no longer needed, rather than delete it, we're going to move it into the no longer needed status column.
+
+137
+00:21:28.640 --> 00:21:35.749
+Brady Allred: And then, once it is complete, the last person to complete the final task changes the status to closed up here.
+
+138
+00:21:36.780 --> 00:21:41.699
+Brady Allred: Now, that seems complex, but you're gonna see the process, and it comes pretty quick.
+
+139
+00:21:43.580 --> 00:21:55.589
+Brady Allred: So, moving on to child tasks. Once the scenario is created, you're going to need to add the child items. These steps, again, show that process, but again, I'm going to show you right here in the demo.
+
+140
+00:21:57.700 --> 00:22:01.150
+Brady Allred: So, starting from the newly created scenario.
+
+141
+00:22:01.910 --> 00:22:04.850
+Brady Allred: We're gonna come down to Child Items here.
+
+142
+00:22:05.230 --> 00:22:08.270
+Brady Allred: Click Add, and select New Task.
+
+143
+00:22:08.940 --> 00:22:11.720
+Brady Allred: Just like the scenario, you're gonna give it a title.
+
+144
+00:22:11.840 --> 00:22:18.009
+Brady Allred: For this, I just use example training, but it's going to be relevant to whatever this task in Workday happens to be.
+
+145
+00:22:18.430 --> 00:22:20.190
+Brady Allred: Gonna click Create Task.
+
+146
+00:22:20.880 --> 00:22:35.070
+Brady Allred: And you can see that it was added here. And you'll notice that the new task is always added on the top. I think that the plan right now is to order it so that the oldest task is on top, and then you complete them in order. Is that… I believe that's correct. Okay, getting knots.
+
+147
+00:22:35.360 --> 00:22:38.479
+Brady Allred: So, you'll have to move the new task to the bottom.
+
+148
+00:22:40.660 --> 00:22:46.680
+Brady Allred: From here, you're going to open up that task in its Full screen view.
+
+149
+00:22:47.860 --> 00:22:49.410
+Brady Allred: You're gonna click Edit.
+
+150
+00:22:51.120 --> 00:23:04.269
+Brady Allred: And then, the same process, you're going to be able to apply, a template to this. Every time you create a child task, this template is automatically applied. This should be the template that you use for your tasks.
+
+151
+00:23:04.430 --> 00:23:08.610
+Brady Allred: So you'll just have to fill this out. You shouldn't need to change the template up here.
+
+152
+00:23:10.640 --> 00:23:15.389
+Brady Allred: Once all that information is in place, You're gonna click Save Changes.
+
+153
+00:23:21.100 --> 00:23:39.759
+Brady Allred: And then you're going to move back over to apply the labels as well. Or, no, first you change the assignee, I apologize. So, the assignee of a task is whomever is going to be testing this portion of the scenario. So, for this example, I change it from me, who's creating the scenario, to Gwen, who
+
+154
+00:23:40.260 --> 00:23:42.580
+Brady Allred: Is going to be the one executing this task.
+
+155
+00:23:45.590 --> 00:23:47.329
+Brady Allred: Then you uncheck yourself.
+
+156
+00:23:47.550 --> 00:23:50.390
+Brady Allred: If you're not the one performing the task.
+
+157
+00:23:50.980 --> 00:23:52.190
+Brady Allred: Click Apply.
+
+158
+00:23:54.460 --> 00:24:02.599
+Brady Allred: Then you move to the labels. So the first label you're going to go through and apply the primary functional area.
+
+159
+00:24:03.310 --> 00:24:10.110
+Brady Allred: This'll be dependent on whatever… whatever area you're in. Again, I think I choose Financial Accounting.
+
+160
+00:24:12.190 --> 00:24:13.409
+Brady Allred: Did I ever get there?
+
+161
+00:24:14.050 --> 00:24:14.979
+Brady Allred: There it is.
+
+162
+00:24:17.880 --> 00:24:23.710
+Brady Allred: You're also going to apply the, Workstream label.
+
+163
+00:24:25.140 --> 00:24:31.429
+Brady Allred: So for this, you'll see we have VIN, HCM, OCM, PMO. For this example, I use FIN.
+
+164
+00:24:39.090 --> 00:24:40.000
+Brady Allred: Maybe.
+
+165
+00:24:40.920 --> 00:24:41.750
+Brady Allred: There we go.
+
+166
+00:24:45.330 --> 00:24:49.120
+Brady Allred: And then once those labels are applied, you click Apply to commit them.
+
+167
+00:24:50.730 --> 00:24:53.599
+Brady Allred: And you'll see that they are now updated.
+
+168
+00:24:58.300 --> 00:24:59.800
+Brady Allred: screen share…
+
+169
+00:25:00.770 --> 00:25:10.520
+Brady Allred: Yes, you'll also have to make sure that you're in the correct milestone for the task. It will inherit whatever scenario milestone it's created from, but just make sure that it's correct and corresponding.
+
+170
+00:25:12.730 --> 00:25:17.439
+Brady Allred: Once all of that is in place, you're going to navigate back to the parent scenario.
+
+171
+00:25:17.970 --> 00:25:20.959
+Brady Allred: By cooking its name… oh, started it over.
+
+172
+00:25:21.650 --> 00:25:25.850
+Brady Allred: So that you can see the indicated data. So that's creating a task.
+
+173
+00:25:27.790 --> 00:25:47.369
+Brady Allred: Child tasks, and their statuses work differently than the scenario statuses. Here, we do use the GitLab built-in status feature, and it's… we don't use labels for child tasks, just because it simplifies that process. And there's very many, statuses that it could be.
+
+174
+00:25:47.660 --> 00:26:06.780
+Brady Allred: So, when to use each status is described here, but it's going to be specific to whatever task you're working on. So you'll probably need to be adaptable and change it as necessary. The default is going to be not started. Whenever you do start working on a task, you're going to change it to in progress.
+
+175
+00:26:06.840 --> 00:26:12.149
+Brady Allred: And then from there, it can go to any variety of these. Hopefully, it goes to past.
+
+176
+00:26:12.340 --> 00:26:17.069
+Brady Allred: But it could go to failed, and from there, you're going to log a defect, which we're going to talk about later.
+
+177
+00:26:19.540 --> 00:26:20.640
+Brady Allred: All right.
+
+178
+00:26:20.970 --> 00:26:28.229
+Brady Allred: So now, I wanted to talk about… this is the process that you're hopefully going to be using the most. This is finding and executing a task.
+
+179
+00:26:28.330 --> 00:26:43.989
+Brady Allred: Once all the scenarios and tasks have been created, you will begin finding and executing tasks. This is the actual end-to-end testing process where you record your experience with the test scenarios. Remember that tasks belong to the parent scenario, and are organized by scenario in the scenarios board.
+
+180
+00:26:44.220 --> 00:26:46.430
+Brady Allred: I need a nickel for every time I say scenario.
+
+181
+00:26:46.970 --> 00:26:54.919
+Brady Allred: Therefore, this workflow explains how to find the tasks that you're currently assigned to complete to progress towards the total scenario.
+
+182
+00:26:55.290 --> 00:27:03.690
+Brady Allred: One important thing to remember is that the current owner or assignee of the scenario must be the assignee of the next task within that scenario.
+
+183
+00:27:03.870 --> 00:27:13.430
+Brady Allred: So, the scenario assignee will change several times over the course of the end-to-end testing process. The assignee of the tasks within the scenario should stay consistent.
+
+184
+00:27:13.640 --> 00:27:29.719
+Brady Allred: But you can think of the scenario assignee as, passing the baton to the next person on the task list. So, task A needs to be completed for task B. If Gwen's up next, and I complete my task, I change the scenario assignee to Gwen instead of me.
+
+185
+00:27:31.810 --> 00:27:49.719
+Brady Allred: From there, you're going to communicate that with the people using the comment boxes. Everything you do in GitLab, you're going to communicate using the comment boxes. We want you to use screenshots and descriptions of your process, just to make sure everything is documented, so we can see, kind of, the workflow that you went through.
+
+186
+00:27:50.020 --> 00:27:59.730
+Brady Allred: This first demo is going to walk you through how to find and execute a task, and then I'm going to have a second that's going to walk you through how to complete a scenario if all those tasks have passed.
+
+187
+00:28:01.540 --> 00:28:04.210
+Brady Allred: So… Eu?
+
+188
+00:28:06.200 --> 00:28:10.049
+Brady Allred: So first, you're going to navigate to the end-to-end testing board.
+
+189
+00:28:10.450 --> 00:28:15.840
+Brady Allred: You can see I just did that using the search bar, and then going to plan, issue boards.
+
+190
+00:28:16.880 --> 00:28:21.139
+Brady Allred: And then making sure I'm in the scenarios board, rather than the defects board.
+
+191
+00:28:22.330 --> 00:28:32.430
+Brady Allred: To find the tasks or scenarios that you're assigned to do, we're going to use the filters feature up here. You know, the filter bar, assignee.
+
+192
+00:28:32.840 --> 00:28:37.620
+Brady Allred: And then, is equal to… And then you're gonna find your own name.
+
+193
+00:28:40.010 --> 00:28:46.880
+Brady Allred: Put the magnifying glass to apply it, and you're gonna see that only the scenarios applicable and relevant to you are gonna show up.
+
+194
+00:28:47.120 --> 00:28:58.850
+Brady Allred: This is why it's important to change the scenario assignee every time the task changes hands, because if this is not correct, they won't see that they're next on the list.
+
+195
+00:29:00.810 --> 00:29:02.980
+Brady Allred: You're gonna open up that scenario.
+
+196
+00:29:03.180 --> 00:29:09.410
+Brady Allred: And you're going to want to click on the link up here to open it in full screen view.
+
+197
+00:29:10.070 --> 00:29:16.070
+Brady Allred: And the reason you're going to want to do that is because the child task is going to open on the right-hand side, so you can see both.
+
+198
+00:29:17.600 --> 00:29:22.499
+Brady Allred: You can see that now that I've opened up the scenario, I'm going to update the labels.
+
+199
+00:29:22.930 --> 00:29:29.689
+Brady Allred: The label status from scenario, whatever, from the default to status in progress.
+
+200
+00:29:30.210 --> 00:29:31.120
+Brady Allred: Why?
+
+201
+00:29:35.280 --> 00:29:51.629
+Brady Allred: Then I'm going to scroll down to the first task that needs to be completed. So if you click on the name, you can see that it opens up on the right, like this, so you can use the indicative data on the parent scenario to complete the task outlined in the child task.
+
+202
+00:29:51.900 --> 00:29:58.309
+Brady Allred: So, having it in this view just gives you all the information you need to make sure that the scenario process goes well.
+
+203
+00:29:59.030 --> 00:30:02.450
+Brady Allred: We're gonna change the task status to in progress.
+
+204
+00:30:02.650 --> 00:30:04.490
+Brady Allred: To show that you're working on it.
+
+205
+00:30:06.300 --> 00:30:11.090
+Brady Allred: Again, using this indicative data, to complete
+
+206
+00:30:11.240 --> 00:30:14.449
+Brady Allred: The task that's outlined in the description here.
+
+207
+00:30:17.220 --> 00:30:32.030
+Brady Allred: From there, once you've completed the task or gone through the process, you're going to use the comment box, you're going to write, whether or not the task was completed successfully, whether it wasn't, what happened, why it wasn't. We're going to ask that you include screenshots.
+
+208
+00:30:33.300 --> 00:30:35.660
+Brady Allred: Once that's in place, you click comment.
+
+209
+00:30:39.230 --> 00:30:44.660
+Brady Allred: And you can change the scenario status to… Passed.
+
+210
+00:30:45.780 --> 00:30:51.360
+Brady Allred: Again, if it didn't pass, you change it to failed, and we'll go through that process in just a bit.
+
+211
+00:30:52.060 --> 00:31:00.379
+Brady Allred: And there you can close the child task, come back to the parent scenario. You can come down, you can see that that task is now registered as passed.
+
+212
+00:31:00.860 --> 00:31:06.939
+Brady Allred: You're gonna hover over the owner of the next task to see their username. I'm gonna go back just one second so you can see that.
+
+213
+00:31:07.090 --> 00:31:17.489
+Brady Allred: Here you can hover over the owner and see that the username of the next task is Gwen, so then you're going to come down to the comment box of the parent scenario.
+
+214
+00:31:18.140 --> 00:31:22.660
+Brady Allred: You're going to tag Gwen using at Then her username.
+
+215
+00:31:23.530 --> 00:31:25.989
+Brady Allred: Let her know that your task has passed.
+
+216
+00:31:26.280 --> 00:31:30.200
+Brady Allred: And you're assigning… reassigning the scenario to her.
+
+217
+00:31:31.040 --> 00:31:32.859
+Brady Allred: Or whomever it is going to.
+
+218
+00:31:36.520 --> 00:31:40.029
+Brady Allred: And then include any other details that they may need to know here as well.
+
+219
+00:31:40.670 --> 00:31:42.100
+Brady Allred: Gonna click Comment.
+
+220
+00:31:43.550 --> 00:31:49.430
+Brady Allred: Let's go and change the assignee of the scenario, just the same way. Uncheck yourself.
+
+221
+00:31:50.200 --> 00:31:52.289
+Brady Allred: And find the new assignee.
+
+222
+00:31:54.570 --> 00:31:57.050
+Brady Allred: And that is a successful handoff.
+
+223
+00:31:59.170 --> 00:32:00.260
+Brady Allred: So…
+
+224
+00:32:00.370 --> 00:32:12.069
+Brady Allred: If we say that we are the last person to complete a task, all the tasks have been completed, and we finish the last one, this is the process of completing the scenario overall.
+
+225
+00:32:13.360 --> 00:32:16.810
+Brady Allred: So, starting from that completion of the task.
+
+226
+00:32:18.110 --> 00:32:23.960
+Brady Allred: You're still going to comment, that the task was completed successfully, just like before.
+
+227
+00:32:24.660 --> 00:32:27.680
+Brady Allred: Same normal process, including screenshots.
+
+228
+00:32:32.570 --> 00:32:34.280
+Brady Allred: Still make the comment.
+
+229
+00:32:36.860 --> 00:32:39.329
+Brady Allred: Change the status of the task.
+
+230
+00:32:43.970 --> 00:32:45.240
+Brady Allred: Close that out.
+
+231
+00:32:45.450 --> 00:32:47.519
+Brady Allred: And go back to the parent scenario.
+
+232
+00:32:47.740 --> 00:32:51.419
+Brady Allred: Here you can see that all of the tasks have passed.
+
+233
+00:32:51.890 --> 00:32:54.810
+Brady Allred: And the scenario is ready to be closed out.
+
+234
+00:32:55.610 --> 00:32:58.250
+Brady Allred: So you'll scroll down, make another comment.
+
+235
+00:32:59.210 --> 00:33:02.419
+Brady Allred: That all the tasks have passed, and the scenario is complete.
+
+236
+00:33:02.560 --> 00:33:03.790
+Brady Allred: and successful.
+
+237
+00:33:05.900 --> 00:33:08.239
+Brady Allred: Include any evidence that you may need.
+
+238
+00:33:09.680 --> 00:33:14.869
+Brady Allred: And make the comment. From here, it's real simple. You just change the status.
+
+239
+00:33:15.180 --> 00:33:19.279
+Brady Allred: In this scenario, the only time that this status has changed to closed.
+
+240
+00:33:20.340 --> 00:33:24.009
+Brady Allred: And you are done. Scenario is closed out. Woohoo!
+
+241
+00:33:25.490 --> 00:33:26.650
+Brady Allred: All right.
+
+242
+00:33:27.660 --> 00:33:31.730
+Brady Allred: So, now we need to talk about what happens when it doesn't work.
+
+243
+00:33:32.170 --> 00:33:37.739
+Brady Allred: when to log a defect. So, this goes through the process of creating a defect.
+
+244
+00:33:37.990 --> 00:33:46.690
+Brady Allred: You would log a defect if there is a test failure, so a specific step in a scenario, or a task didn't produce the expected result.
+
+245
+00:33:46.830 --> 00:34:02.539
+Brady Allred: Which results in the task failing. There's a system malfunction, so if it's throwing an error or behaving unexpectedly, if there's a process block, which is, an integration with finance, HR, tech, or whatever is broken, preventing the end-to-end flow.
+
+246
+00:34:02.790 --> 00:34:07.409
+Brady Allred: If there is an important… oh, oh, and it is important to remember that if
+
+247
+00:34:07.690 --> 00:34:13.839
+Brady Allred: Any task in a scenario has a defect, the entire scenario is considered a failure until the problem is fixed.
+
+248
+00:34:14.380 --> 00:34:19.009
+Brady Allred: This slide walks you through the process, and I'm going to go over it in the demo now.
+
+249
+00:34:21.020 --> 00:34:25.169
+Brady Allred: So here, we're starting as if I had just gone through the task.
+
+250
+00:34:25.880 --> 00:34:29.189
+Brady Allred: We're going to change the status of the task to failed.
+
+251
+00:34:29.889 --> 00:34:41.500
+Brady Allred: We're going to make note of the task ID up here. This is important to link the task, or the defect, to the correct task and scenario, to make sure that we're logging in the correct way, and everything's connected.
+
+252
+00:34:44.969 --> 00:34:51.460
+Brady Allred: Once that's noted and copied, You come over to the, three little more actions button here.
+
+253
+00:34:51.969 --> 00:34:54.969
+Brady Allred: And click Create New Related Item.
+
+254
+00:34:56.820 --> 00:35:01.729
+Brady Allred: You're going to change the type to issue rather than task.
+
+255
+00:35:01.870 --> 00:35:07.390
+Brady Allred: And you're gonna give the defect a title that describes the defect problem and the task it's related to.
+
+256
+00:35:13.670 --> 00:35:15.870
+Brady Allred: Once that's in place…
+
+257
+00:35:18.790 --> 00:35:26.559
+Brady Allred: You're going to choose a template, just as with tasks and scenarios. There's a defects template.
+
+258
+00:35:27.440 --> 00:35:29.130
+Brady Allred: Gonna apply that template.
+
+259
+00:35:29.390 --> 00:35:41.009
+Brady Allred: And you're gonna have the option to enter the description of the defect, what went wrong, I suggest including screenshots, and be as detailed as possible to why this defect is being created.
+
+260
+00:35:47.800 --> 00:35:49.829
+Brady Allred: more detailed than I am in this example.
+
+261
+00:35:51.830 --> 00:36:06.909
+Brady Allred: From here, you're going to also update the, task number, so this is why we noted it before from the task. This is going to connect it to that task, so backslash blocks, hashtag, then whatever number it happened to be.
+
+262
+00:36:07.400 --> 00:36:13.759
+Brady Allred: You'll notice that it's also listed down here. I don't know that that's going to be the case every time, but it is listed here.
+
+263
+00:36:15.170 --> 00:36:17.380
+Brady Allred: So, hashtag 194.
+
+264
+00:36:19.450 --> 00:36:25.240
+Brady Allred: And then once that's in place, you go and manage the labels and milestones. So, the labels here.
+
+265
+00:36:26.330 --> 00:36:31.140
+Brady Allred: We're going to first add the Workstream label.
+
+266
+00:36:36.810 --> 00:36:39.699
+Brady Allred: Whatever Workstream this happens to be involved in.
+
+267
+00:36:40.420 --> 00:36:46.490
+Brady Allred: You're going to add the defect focus, which is kind of the same as the primary functional area.
+
+268
+00:36:48.120 --> 00:36:50.790
+Brady Allred: Once again, I choose Financial Accounting.
+
+269
+00:36:57.990 --> 00:37:04.599
+Brady Allred: And lastly, you're going to add the priority label. So this is a unique label to defects.
+
+270
+00:37:05.120 --> 00:37:10.919
+Brady Allred: It's going to… it basically categorizes how big of a problem this defect is.
+
+271
+00:37:11.060 --> 00:37:13.909
+Brady Allred: And there's several ways to determine that.
+
+272
+00:37:14.100 --> 00:37:19.989
+Brady Allred: Basically, there's high, medium, low. The default that it's going to come with, you see here, is low.
+
+273
+00:37:20.240 --> 00:37:36.349
+Brady Allred: If a defect blocks a task from being completed, then the priority should be high. If the defect has a workaround that's available, then the priority would be medium. And if the defect is because of cosmetic issues, the priority would be low.
+
+274
+00:37:38.820 --> 00:37:49.869
+Brady Allred: You're also going to remove the, defect focus area none label that comes automatically applied, just so that you have the correct and only defect focus area label on here.
+
+275
+00:37:55.470 --> 00:37:59.590
+Brady Allred: Once that's in place, you click Create Scenar- or Create Issue.
+
+276
+00:38:02.420 --> 00:38:05.170
+Brady Allred: And you can close out this pop-up window.
+
+277
+00:38:05.870 --> 00:38:13.470
+Brady Allred: Now, it's important to check that the defect is created correctly, so you're going to navigate to the defects board.
+
+278
+00:38:13.940 --> 00:38:15.509
+Brady Allred: Then the issues board?
+
+279
+00:38:16.130 --> 00:38:18.749
+Brady Allred: You're gonna see that it populates there.
+
+280
+00:38:21.930 --> 00:38:28.210
+Brady Allred: You go down and find the newly created defect. It's usually going to be at the bottom if it's brand new, and open it up.
+
+281
+00:38:29.190 --> 00:38:35.940
+Brady Allred: And you're gonna see here that it is correctly linked to Example Training Task 3, which was the task that it was created from.
+
+282
+00:38:37.570 --> 00:38:40.680
+Brady Allred: And that is the defect creation process.
+
+283
+00:38:41.960 --> 00:38:57.669
+Brady Allred: So, defect statuses, there are quite a few. I don't know how many you're going to need to worry about, because the PMO team, I believe, is going to be handling a lot of the defect processes, but you can track the progress and see them here.
+
+284
+00:38:57.760 --> 00:39:04.460
+Brady Allred: Like scenarios, defects are tracked using labels rather than the status.
+
+285
+00:39:04.830 --> 00:39:10.680
+Brady Allred: And then, again, like scenarios, the only time this is going to change is when the defect is closed out completely.
+
+286
+00:39:14.280 --> 00:39:32.499
+Brady Allred: Okay, so we wanted to highlight some reporting features to assist with the verification. You'll be able to use the Empowering UF Test Scenario Dashboard. This is going to help you track the health of the overall project. You'll be able to use the Power BI reports to track your scenarios, tasks, and defects.
+
+287
+00:39:32.670 --> 00:39:39.150
+Brady Allred: In order to access this dashboard, you'll need to use the UF… you'll… you'll need the UF
+
+288
+00:39:39.260 --> 00:39:44.179
+Brady Allred: underscore N, underscore empowering security role.
+
+289
+00:39:44.360 --> 00:40:00.319
+Brady Allred: For now, you'll need to request access to that role through your DSA, but we are working on a way to provide more universal access to that, and you should expect to hear more about that before Go Live. And then this is a link to the, Power BI dashboard.
+
+290
+00:40:01.850 --> 00:40:19.240
+Brady Allred: So here are some detailed reports that you can see using the dashboard. You're going to be able to see the number of scenarios by status. You're gonna see the… have the option to filter by author, milestone, labels, direct navigation through GitLab and URLs. You're going to see task tracking, defect status tracking.
+
+291
+00:40:20.360 --> 00:40:30.340
+Brady Allred: There's also some features that are, in development. You're gonna see the number and percent of daily scenarios slash tasks slash defects that have passed, failed,
+
+292
+00:40:30.860 --> 00:40:34.969
+Brady Allred: And the cumulative scenario test defects that have passed and failed.
+
+293
+00:40:35.770 --> 00:40:37.789
+Brady Allred: Hoping to have those in place soon.
+
+294
+00:40:40.040 --> 00:40:52.500
+Brady Allred: Okay, that was a lot. Your next step is to save a copy of the checklist at the very beginning of this presentation that I show you, and then log into GitLab and get going.
+
+295
+00:40:52.740 --> 00:40:54.100
+Brady Allred: I…
+
+296
+00:40:54.520 --> 00:41:03.889
+Brady Allred: Wish I knew more about the process to answer a lot of your questions, but I'll field the ones that I can, and rely on some of the PMO team to help me answer what I can't.
+
+297
+00:41:06.970 --> 00:41:08.839
+Brady Allred: But I'll open it up to you at this time.
+
+298
+00:41:11.140 --> 00:41:22.480
+Alicia Turner (UF): Fantastic job, Brady. Our hat is off to you, Gwen. Angie, thank you so much for letting Brady help with this. I wish, Brady, we had had you all the way back at the beginning of Architect to Configure.
+
+299
+00:41:22.480 --> 00:41:37.149
+Alicia Turner (UF): to do this when we were just starting our GitLab journey. That was amazingly helpful and recorded, not only for anyone who couldn't make it today, but if anyone here wants to rewatch or remind yourself about all the checklist items or tips and tricks Brady shared.
+
+300
+00:41:37.160 --> 00:41:41.089
+Alicia Turner (UF): What questions do we have? We do have time for questions.
+
+301
+00:41:49.470 --> 00:41:51.300
+Brady Allred: Probably too many to be asked.
+
+302
+00:41:52.030 --> 00:42:05.230
+Alicia Turner (UF): It sounds like there… I'm not hearing many! I got a 7-second pause, that's 7… 8… awkward second pause, so it sounds like no questions. If you do have questions, reach out anytime.
+
+303
+00:42:05.230 --> 00:42:20.410
+Alicia Turner (UF): Ginny Ahuja, Brady, myself, we will help flag down answers. Belinda, who could not be with us today, is also an incredible wealth of information when it comes to GitLab, and is, our hero behind the scenes for everything
+
+304
+00:42:20.410 --> 00:42:40.220
+Alicia Turner (UF): That she has done to help get that tool to where it is now. And, the Power BI reports from Jim Freiman's team will also be an extra, feature set heading into test phase that we did not have an architect to configure, and that is bound to be a game changer as well. So everyone who has contributed
+
+305
+00:42:40.220 --> 00:42:45.799
+Alicia Turner (UF): to get us this GitLab trading information and all of our tool sets where they are today. Thank you so, so very much.
+
+306
+00:42:46.480 --> 00:42:53.469
+Alicia Turner (UF): Okay, we just are going to wrap up with a few PMO announcements. I think we've got one more slide, right, Ben?
+
+307
+00:42:55.000 --> 00:42:56.620
+Alicia Turner (UF): Okay, great.
+
+308
+00:42:58.950 --> 00:43:23.850
+Alicia Turner (UF): Okay, so a couple of them are just reminders that we've mentioned the last week or two. We do have a couple project quiet periods coming up. The spring break is around the corner, the week of March 16th to the 20th, but also the week of the July 4th holiday. We will not have any of our large meetings like these, or the raid reviews, or the action item reviews. I know you'll all be so sad to not have those weekly meetings during our project
+
+309
+00:43:23.850 --> 00:43:25.070
+Alicia Turner (UF): quiet weeks.
+
+310
+00:43:25.070 --> 00:43:41.120
+Alicia Turner (UF): Work will continue, so it's not a project shutdown, it's just project quiet, so, if you have PTO planned for those periods, or at any time, really, check with your Workstream leads, and they'll be able to guide you for what, is needed and what can be done there.
+
+311
+00:43:41.410 --> 00:43:56.319
+Alicia Turner (UF): Action items in our Smartsheet central tracker. We have a great rhythm going now. Keep updating those as you have progress for that central list of action items. And our last update for today is just a look ahead.
+
+312
+00:43:56.320 --> 00:44:12.600
+Alicia Turner (UF): As we saw on the timeline earlier, we are rounding the corner on Architect to Configure. The official end date is next Friday, February 27th. That is our third critical milestone, as I mentioned. But a couple days before that, next Wednesday, Feb 25th.
+
+313
+00:44:12.600 --> 00:44:32.199
+Alicia Turner (UF): We're going to close out Sprint 3, and at that point, if we have any user stories that are, open, still open, have not been completed, they'll be assessed by the Workstream leads for one of three things. If they were still open because there's a gap, meaning Workday can't do what we need it to do.
+
+314
+00:44:32.250 --> 00:44:38.509
+Alicia Turner (UF): We will log that gap in Smartsheet on the functional gap log, move it to a closed status.
+
+315
+00:44:38.650 --> 00:44:45.029
+Alicia Turner (UF): If there's a workaround, it'll stay open, but go into our backlog milestone. We mentioned that a few weeks ago, I believe.
+
+316
+00:44:45.410 --> 00:44:57.919
+Alicia Turner (UF): On the second bucket here, if it's waiting for something during the end-to-end test phase, and you can't progress further, it will also go into that backlog milestone and become part of test scenarios.
+
+317
+00:44:57.920 --> 00:45:08.120
+Alicia Turner (UF): and testing during end-to-end. If there's a decision that is still pending, and therefore we can't figure out how to move forward, that will also go into that backlog milestone.
+
+318
+00:45:08.210 --> 00:45:22.720
+Alicia Turner (UF): And as we progress in the coming weeks with rolling out the change request process, we're already getting our feet under us to go through the items in the backlog milestone, and that will come and be a part of change review moving into the test phase.
+
+319
+00:45:23.240 --> 00:45:34.830
+Alicia Turner (UF): So, questions welcome anytime. We do have 10 minutes left. We did go longer than our 25 minutes a day for 55 minutes. Let's do an open floor. Any questions?
+
+320
+00:45:35.010 --> 00:45:36.210
+Alicia Turner (UF): comments…
+
+321
+00:45:42.680 --> 00:45:49.680
+Alicia Turner (UF): All right, well, I hope you all have a wonderful evening, and we will see you on the next one. Take care.
+

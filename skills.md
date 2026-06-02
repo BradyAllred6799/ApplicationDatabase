@@ -1,0 +1,85 @@
+# Skills
+
+- Process Automation
+- Visual Basic for Applications (VBA)
+- Python with AI
+- AI Automation
+- Microsoft Visual Studio Code
+- Business Process Improvement
+- WCAG Compliance
+- Adobe Premiere Pro
+- SME Engagement
+- Iterative Design
+- Rapid Application Development (RAD)
+- Video Production
+- Scriptwriting
+- Instructional Videos
+- Studio Lighting
+- DaVinci Resolve
+- VILT
+- Change Management
+- Web Analytics
+- Genially
+- Agile Project Management
+- User Experience (UX)
+- Educational Assessment
+- Assessment Validity
+- Backwards Design
+- AI Prompt Engineering
+- Blended Learning
+- ARCS
+- Gagné’s Nine Events
+- Scenario-Based Learning
+- Instructional Design
+- Training Needs Analysis
+- Visual Communication
+- Color Theory
+- SnagIt
+- Adobe Audition
+- Prototyping
+- Instructional Product Development
+- Content Analysis
+- Design Strategy
+- Strategic Planning
+- Learner Analysis
+- Training Gap Analysis
+- Persona Creation
+- Facilitation
+- Course Evaluation
+- Program Evaluation
+- Learning Outcomes
+- Learning Theory
+- Research
+- Analysis
+- Adobe Captivate
+- Critical Thinking
+- Administration
+- E-Learning Design
+- JavaScript With AI
+- Cascading Style Sheets with AI
+- ADDIE
+- Research Skills
+- Articulate 360
+- Training Evaluation
+- Adobe Illustrator
+- Training
+- Teaching
+- Communication
+- Project Documentation
+- Graphic Design
+- Training Coordination
+- Web Authoring
+- Instructor-led Training
+- HTML with AI
+- Instructure Canvas
+- Articulate Storyline
+- Adobe Photoshop
+- Camtasia
+- Canva
+- Microsoft Office
+- Synthesia
+- Educational Technology
+- Academic Advising
+- E-Learning
+- Coaching & Mentoring
+- Learning Analytics

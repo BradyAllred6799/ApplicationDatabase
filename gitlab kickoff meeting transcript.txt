@@ -1,0 +1,90 @@
+GitLab Test Scenario Training Kickoff Meeting Transcript
+Speaker: Ginny.
+A little bit of background, Jira was the tool that was used in UF for a long time. Just recently, there has been a transition to GitLab, where Belinda has worked on different projects with GitLab being the tool. 
+Deloitte had a recommendation to use Jira for empowering, but Cyra made the decision, the last call to use GitLab for the workday project. So we are not going back to that decision. We are using GitLab as our tool. It entails that GitLab has to be customized to use for workday, which is always a challenge, but I think Belinda and Manny pull that together very quickly to make our sprint cycles run in GitLab. So the functional team used Gitlab for sprint 1, sprint 2, and sprint 3, but now we are transitioning to a different and, the most important phase of this project, the test phase. The test phase means that we are all in this together and making sure the test scenarios pass before go live, which means we need to look for defects, we need to see where it stands, who it is assigned to, where the block is, and where our dependencies are. It's a lot of moving parts. Sprints 1-3 were siloed and unit-wise, but now, sprint 4 is end-to-end, and that is totally collaborative. I think it is very important for Gwynn and Brady to understand this. So then what is happening? Test scenarios. The test scenarios will be written by the functional team in Smartsheet, and then those test scenarios will be moved from Smartsheet to GitLab. And then there is no going back to Smartsheet; everything will stay in GitLab because the test phase starts in March, but the test scenario writing and education to the functional team will start in February. This is where your training will be very important for them to get ready to use GitLab to its full extent in the test phase. So the expectation is they're going to write all of these scenarios as they're finishing sprint 3. Deloitte will be guiding the teams on how to write it, because for a few of them it might be the new way of doing it. 
+So Manny has a lot of things that have been built in GitLab as a tool. Belinda has, has made a lot of wikis, a lot of readmes, a lot of flow diagrams to help the team know what to do. For example, when you move from not created to in progress, to this status write a comment. like the disciplines and checklist of the flow.
+There have been times when a team forgets to follow the discipline, which is why the training is important.[BA1.1]
+PMO will have a process to do a QA check. What has been happening when we report to the project leadership team, we take the data to report from Gitlab, and I suppose Gitlab misses some data points, because fields are not required. So then the data is not speaking to what the actual status is. The one limitation of GitLab is that you cannot have a required field. People can miss the data to be entered. So that is why we put a mitigation plan, that, and working with Manny and Belinda, the PMO will do a QA check on those data points that the reporting is in alignment with what the real status.
+Speaker: Gwynn.
+So first, when will the reconfiguration of Gitlab be done? Is it already set up and ready to go for testing? Where are you in that process?
+
+Speaker: Ginny.
+So at a very high level, we have a test environment where the test template is ready to go. The production environment will be ready eventually, but the demo was done in the test environment. So, to the team, this is how the test scenarios will look. By February 3rd, I think we will be all set to go.
+
+Speaker: Belinda.
+Basically, we couldn't do 100% of it, mainly because we have scripting to do, and the fact that GitLab is being migrated to the latest and greatest version today, so certain features and stuff that are going to be in the build won't be available to us until tomorrow. 
+
+Speaker: Gwynn.
+So, I think we could build the base of the training in January, which would be ideal even though the tool isn't completely ready, and then we can make adjustments as needed at the time. So, from our perspective, what we really need from you all is the step-by-step process of how exactly you would want an ideal user to use the tool while in testing. So, for example, step one: login, step two: where's my list? Etc. 
+I gave Jenny some of these earlier, and it may be more information than this, but I think at a really high level, we want the user to be able to answer these questions: how do I log in? What am I looking at?
+That's the hardest part of using any new tool is understanding when you open it. It just seems a little overwhelming.
+So, a quick look at the places you need them to visually check into. Like, does it have a menu on the left side, or does it have a menu across the top? How do I find my tasks? How do I mark them?
+Also, When Jenny said data, it made me think that maybe a checklist. It is a great lean efficiency tool that might be a really cool thing for them to have, since there are no mandatory fields. So, for example, if I were going through the process, every time I do a process, and I would go to record how my testing went, I just pull up the checklist, and I mark off the items of the process I have completed and that is how I know I am ready. 
+So at a high level, I think that that's what we're looking for. For us. the fastest way for us to get going is to get on a Zoom call like this and walk Brady through it so that we can record it and then we can take a look at what we have and determine what kind of training materials we think would be the most effective.
+Maybe we'll think of something better than the checklist, or maybe it's a little bit of training and the checklist, but I think that's the most efficient way. And then you guys can also share with us what you have seen work in this space that helps learners do it correctly the first time, and answer the question: how do we get to 100% complete and accurate the first time through?
+Does that make sense?
+
+Speaker: Ginny.
+Definitely and you know what the good news is that Belinda has 90% of the material done, including the checklist, so it's a matter of reframing it to be from a user perspective rather than a technical perspective.
+Brady, we still have 45 minutes, I think, if you are ready, we can use the 45 minutes to start that and then if you need additional time to get the training done, we can talk about it.
+
+Speaker: Gwynn.
+So Belinda and Manny,  I know this is at least the first time you're working with me and Brady. The other thing that we'll do is Brady can set up a Teams chat for all 5 of us, where you can share all of the documentation that you already have. That way Brady has all of the background information, and he can take a look at that as he starts to look at the process. Then we will work inside the team's chat.
+We typically don't meet a lot. We work in live documents, so we'll put whatever documents that we're using into Teams as well and then make comments and edits in real time. Is that cool?
+
+Speaker: Belinda.
+Yes. I've gone ahead and also sent the link to our end-to-end testing and production environment, and we can add Brady to GitLab. Then that way, as you're learning, you can also just poke around and create things, and it'll be perfectly fine. It's a much better learning tool.
+
+Speaker: Brady.
+Who is the end user and audience of the training?
+
+Speaker: Gwynn.
+The end users will be people on campus who actually do the work. We don't want to spend time teaching them the whole tool. The purpose isn't to learn everything cool about GitLab. The purpose is, 
+“Can I record the data that I need to record on the workday system as I move through a process?”
+We will also need to set some sort of timeline deadline cadence after this, as well, just so that we know what our window is for developing.
+
+Speaker: Ginny.
+The audience is the workday project team. The 200 people are going to write the test scenarios. The purpose of the end-to-end testing is for the functional team to see that they built the system correctly. 
+The end-to-end phase that is happening is making sure finance, HR, and tech are working from end to end in their scenario business processes correctly. Once they confirm internally as a project, then we will be ready for the campus to test.
+The first phase of the test phase is to just make sure that the project team sees that the process is working from end to end, including finance data, integrations, etc.
+This training focus is only for the functional team for the end-to-end phase. Lets start the recording walkthrough. 
+
+Speaker: Manny.
+So this is what GitLabs look like. This is what you will see when you log in. The users will be able to see the testing project and their other projects here. 
+We're going to go into the end-to-end testing project, which will put us on our homepage.
+This homepage has a couple of quick links for them, and maybe we can develop these out further as we see what users will need. There are some helpful links for them, and I'll go over what those are. But I'm thinking maybe we can go through just the Ideal workflow here.
+So ideally, users are going to go into issues. This is where they're going to go to either search for certain test scenarios that they're working on, or, as we're going to do here, create a new test scenario. Even though the terminology says issues, it is just GitLabs default term, for the end user, it means the testing scenarios. 
+So they will click on “new item,” and they will write the title of their specific training scenario in the “Title” field.
+ And now what we're hoping to have users do is select the template for their functional area from the “Description” drop-down menu.
+After selecting the template, the description field will look kind of ugly at first, because the default view of the text is not formatted. This can be fixed by switching to rich text editing after selecting the template. 
+The items in the template description fields are still being refined and will likely change to match the agreed-upon entries. We will get more information soon.  
+Next, we move on to the labels section, which is another reason we're using this template, is it will automatically add some of the required labels to the test scenarios. These labels include “Type: Scenario,” “Primary functional Area,” “Workstream,” And “Relative Size.” 
+The Relative Size label is set to None by default, because it is meant to indicate how large, or time consuming, a scenario might take, and could be set to “S” for small, “M” for medium, or “L” for large, but this will depend on each test scenario being created and will need to be modified accordingly. 
+Once the user has a title, description, and the correct labels, they will click “Create Issue” to create the training scenario. They should see the creation dialogue box close and the scenario they just created at the top of the Open Issues tab on the dashboard. 
+To make further changes to the scenario, they can select it from the list. It will appear as a side panel to the right of the dashboard. To open the scenario in full screen they will click the link at the top of the training scenario's side panel positioned right above the title. 
+Now that we've created the test scenario, the next step is to create the specific tasks to be completed as a part of the scenario. These tasks will be created under the “Child Items” section of each scenario. 
+Create a new task by clicking the “Add” button and then “New Task” in the “Child Items” section. Give the task a name in the “Title” field, and then click “Create Task” below. 
+To add more details to the step beyond the title, click the name of the task. A side panel will appear on the right-hand column with the task details. Similar to the scenario side panel from before, users can click on the link to the task at the top to view the task details in full screen. 
+Each task will have required labels as well, however, the exact requirements are yet to be determined. We do know that the labels are going to change based on the scenario and task, because scenarios will often need to cross to different departments within UF. The labels then act as a way of ensuring that the right person completes the right task in the right scenario from the right department. 
+Any collaboration that needs to be done surrounding the task should be done in the comments box of each task. This will ensure that there is a record of the thought processes behind changes and the reasons for why a task is configured the way it is. To ensure that comments are directed to the correct person, you can tag them in the comment box by typing “@” followed by their uf ID.
+
+Now that we have gone over task creation, it is time to go over what the user needs to do if they find that a task has a defect. At the top right corner of the screen, anywhere in GitLab, the user will click “Create New” then “Issue.” A “New Issue” Dialogue box will appear just as it did when creating a new Training Scenario. This time, the user will enter a title for the defect, and select the “Defect” template from the “Description” dropdown menu. 
+They will use the “Defect” template in the “Description Field” below to describe what the issue or defect is that they are experiencing. There is also a place in the template to add a task number that is related to the defect. They will see:
+
+“/blocks #[Task Number]”
+And they will be required to replace the [Task Number] with the correct corresponding number that the defect is in reference to. This is the number assigned to the task when it was created. They can search for the task number simply beginning to type the name of the task they are referring to in place of the [Task Number] text. If they know the number directly, they may also just type it in place as well. Once in place, the defect will appear on the page of the corresponding task. 
+
+Each user will also need to attach the correct “Workstream” label to the defect they are creating. This will help indicate who is responsible for addressing the problem the defect represents. Defects also have a Priority label to indicate the level of urgency in addressing the problem, and a Type label that ensures the newly created defect ends up on the overarching Defect board.  
+
+Now that we have learned to create Training Scenarios, Tasks, and Defects, we will review some of the navigational aspects of GitLab, starting with the Issue boards.
+The Issue boards can give a high level over view of all the scenarios, Including their status, Functional Area, and Workstream. 
+
+The status of a scenario can be changed by either dragging a scenario card in the issue board from one status column to another or opening the scenario page itself and editing the “Status” dropdown box. When a user changes the status of a scenario, they should leave a comment in the scenario to indicate when the status changed, why, or any other communications that need to be made regarding the specific scenario. 
+
+In addition to the end-to-end scenarios, users can use the Issue boards to view the defects that have been created by selecting “Defects” from the Issue boards dropdown menu on the top left of the page. The Defects Issue board works in the same way as the Scenario Issue board, showing a high-level overview of the Defects and their current status. Defect statuses can be changed the same way as scenario statuses, by either dragging the defect card from column to column or in the Defect page itself under the status dropdown. 
+
+Users also need to be aware of how to use filters on Issue boards to sort through what scenarios and defects apply to them in their functional area or workstream. This can be done using the filter bar at the top of the Issue board. Users will select the type of filter they want to view, which will often be done with labels. They will be asked to choose if they would like to filter so only cards of their choice are viewable using the “=” option, or so that every card except the ones of their choice are viewable using the “!=” option.
+One label used to filter the issue boards that should be noted is the “Milestone = ETE X” Label. This will be used to filter out the scenarios assigned to each milestone in end to end testing process. For example, if the label “Milestone = ETE 1” is applied, only scenarios ascribed to milestone 1 will show in the Issue board. Milestones are timeframes in which a scenario is expected to be completed. These will be set up as different default filter boards that can be selected from the Issue board dropdown. 
+The purpose of all these features and processes in GitLab is to ensure smooth collaboration on testing business processes and scenarios in Workday across multiple functional areas and workstreams. Scenarios will often need to involve both Financial and HCM workstreams and teams. So, with the use of subtasks within the scenarios, and the correct implementation of labels and defects, this tool will help us to ensure that the right person is completing the right task in the right scenario at the right time for a cohesive end-to-end user experience. 
+
+Therefore, it is important that these disciplines and guidelines are followed, as a failure to do so will have a direct impact on everyone involved in testing each scenario. 
